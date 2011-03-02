@@ -41,7 +41,7 @@ class AdCategory(models.Model):
     """
     title = models.CharField(verbose_name=_(u'Title'), max_length=255)
     slug = models.SlugField(verbose_name=_(u'Slug'), unique=True)
-    description = models.TextField(verbose_name=_(u'Description'))
+    description = models.TextField(verbose_name=_(u'Description'), blank=True)
 
     class Meta:
         verbose_name = 'Category'
@@ -57,7 +57,7 @@ class AdZone(models.Model):
     """
     title = models.CharField(verbose_name=_(u'Title'), max_length=255)
     slug = models.SlugField(verbose_name=_(u'Slug'))
-    description = models.TextField(verbose_name=_(u'Description'))
+    description = models.TextField(verbose_name=_(u'Description'), blank=True)
 
     class Meta:
         verbose_name = 'Zone'
