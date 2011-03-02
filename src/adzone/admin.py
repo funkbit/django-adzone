@@ -17,6 +17,7 @@ class AdCategoryAdmin(admin.ModelAdmin):
     list_display = ['title', 'slug']
 
 class AdZoneAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug': ['title']}
     list_display = ['title', 'slug', 'description']
 
 class AdBaseAdmin(admin.ModelAdmin):
