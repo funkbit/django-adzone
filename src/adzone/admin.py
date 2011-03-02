@@ -30,12 +30,14 @@ class AdClickAdmin(admin.ModelAdmin):
     list_display = ['ad', 'click_date', 'source_ip']
     list_filter = ['click_date']
     date_hierarchy = 'click_date'
+    readonly_fields = ['click_date']
 
 class AdImpressionAdmin(admin.ModelAdmin):
     search_fields = ['ad', 'source_ip']
     list_display = ['ad', 'impression_date', 'source_ip']
     list_filter = ['impression_date']
     date_hierarchy = 'impression_date'
+    readonly_fields = ['impression_date']
 
 class TextAdAdmin(AdBaseAdmin):
     search_fields = ['title', 'url', 'content']
