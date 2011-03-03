@@ -6,8 +6,8 @@
 # If this script is distributed, it must be accompanied by the Licence
 
 from django import template
+
 from adzone.models import AdBase, AdImpression
-from datetime import datetime
 
 register = template.Library()
 
@@ -39,7 +39,6 @@ def random_zone_ad(context, ad_zone):
         try:
             impression = AdImpression(
                     ad=ad,
-                    impression_date=datetime.now(),
                     source_ip=from_ip
             )
             impression.save()
@@ -69,7 +68,6 @@ def random_category_ad(context, ad_zone, ad_category):
         try:
             impression = AdImpression(
                     ad=ad,
-                    impression_date=datetime.now(),
                     source_ip=from_ip
             )
             impression.save()

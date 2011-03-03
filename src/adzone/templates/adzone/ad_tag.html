@@ -13,6 +13,6 @@ A instance of AdBase is passed to this tag.
 
 {% if ad.bannerad %}
     <div class="ad_banner">
-        <a target="_blank" href="{{ ad.get_absolute_url }}"><img src="{{ ad.bannerad.content.url }}" alt="{{ ad.title }}" /></a>
+        <a target="_blank" href="{{ ad.get_absolute_url }}"><img src="{{ ad.bannerad.content.url }}" alt="{{ ad.title }}"></a>
     </div>
 {% endif %}
