@@ -7,7 +7,6 @@
 
 from django.conf import settings
 from django.db import models
-from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 
 from adzone.managers import AdManager
@@ -18,7 +17,7 @@ class Advertiser(models.Model):
     """
     company_name = models.CharField(_('Company Name'), max_length=255)
     website = models.URLField(_('Company Site'), verify_exists=(settings.DEBUG==False))
-    user = models.ForeignKey(User, verbose_name=_('User'))
+    user = models.ForeignKey('auth.User', verbose_name=_('User'), null=True, blank=True)
 
     class Meta:
         verbose_name = _('Ad Provider')
