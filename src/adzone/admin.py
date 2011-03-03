@@ -24,6 +24,7 @@ class AdBaseAdmin(admin.ModelAdmin):
     list_display = ['title', 'url', 'advertiser', 'since', 'updated', 'enabled']
     list_filter = ['updated', 'enabled', 'since', 'updated']
     search_fields = ['title', 'url']
+    readonly_fields = ['since', 'updated']
 
 class AdClickAdmin(admin.ModelAdmin):
     search_fields = ['ad', 'source_ip']
