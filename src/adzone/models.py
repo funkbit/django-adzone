@@ -35,7 +35,7 @@ class AdCategory(models.Model):
     a Model to hold the different Categories for adverts
     """
     title = models.CharField(_('Title'), max_length=255)
-    slug = models.SlugField(_('Slug'), unique=True)
+    slug = models.SlugField(_('Slug'))
     description = models.TextField(_('Description'), blank=True)
 
     class Meta:
@@ -128,7 +128,7 @@ class TextAd(AdBase):
 
 class BannerAd(AdBase):
     """ A standard banner Ad """
-    content = models.ImageField(_('Content'), upload_to='adzone/bannerads/')
+    content = models.ImageField(_('Content'), upload_to='ads/banners/')
     
     class Meta:
         verbose_name = _('Banner Ad')
